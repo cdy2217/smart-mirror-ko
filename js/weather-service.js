@@ -8,7 +8,7 @@
 
         service.init = function(geoposition) {
             geoloc = geoposition;
-            return $http.jsonp('https://api.forecast.io/forecast/'+FORCAST_API_KEY+'/'+geoposition.coords.latitude+','+geoposition.coords.longitude+'?units=si&callback=JSON_CALLBACK').
+            return $http.jsonp('https://api.darksky.net/forecast/'+FORCAST_API_KEY+'/'+geoposition.coords.latitude+','+geoposition.coords.longitude+'?units=si&callback=JSON_CALLBACK').
                 then(function(response) {
                     console.debug(response)
                     return service.forcast = response;
